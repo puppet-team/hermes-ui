@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply text-slate-800 antialiased;
+    @apply dark:bg-slate-950 dark:text-slate-200;
+  }
+  * {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+}
+
+@layer components {
+  /* 滚动条美化 */
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(148 163 184 / 0.4) transparent;
+  }
+  .scroll-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background-color: rgb(148 163 184 / 0.4);
+    border-radius: 9999px;
+  }
+  .scroll-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Markdown 预览样式 */
+.prose-skill {
+  @apply text-sm leading-7;
+}
+.prose-skill h1 {
+  @apply text-xl font-bold mt-4 mb-2;
+}
+.prose-skill h2 {
+  @apply text-lg font-semibold mt-4 mb-2;
+}
+.prose-skill h3 {
+  @apply text-base font-semibold mt-3 mb-1;
+}
+.prose-skill p {
+  @apply my-2;
+}
+.prose-skill ul {
+  @apply list-disc pl-5 my-2;
+}
+.prose-skill ol {
+  @apply list-decimal pl-5 my-2;
+}
+.prose-skill code {
+  @apply px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-hermes-700 dark:text-hermes-300 text-[0.85em] font-mono;
+}
+.prose-skill pre {
+  @apply p-3 rounded-lg bg-slate-900 text-slate-100 overflow-x-auto my-3 text-xs;
+}
+.prose-skill pre code {
+  @apply bg-transparent text-inherit p-0;
+}
+.prose-skill blockquote {
+  @apply border-l-4 border-hermes-300 pl-3 italic text-slate-500 dark:text-slate-400 my-2;
+}
+.prose-skill a {
+  @apply text-hermes-600 dark:text-hermes-400 underline;
+}
+.prose-skill table {
+  @apply w-full border-collapse my-3 text-xs;
+}
+.prose-skill th,
+.prose-skill td {
+  @apply border border-slate-200 dark:border-slate-700 px-2 py-1 text-left;
+}
+.prose-skill hr {
+  @apply my-4 border-slate-200 dark:border-slate-700;
+}
